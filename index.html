@@ -1,0 +1,248 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>タイトル</title>
+<link href="css/reset.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kurenaido&display=swap" rel="stylesheet">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yomogi&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300&display=swap" rel="stylesheet">
+
+<!--jQuery本体-->
+<script src="js/jquery-1.11.2.min.js"></script>
+
+<!--即時関数-->
+<script>
+$(function() {
+// スクロールイベント
+  $(window).scroll(function() {
+    // フェードアニメーションを呼び出す
+    fadeAnime();
+  });
+  
+  // フェードアニメーションの設定
+  function fadeAnime() {
+    // .fadeUpTriggerが付いた要素に対して
+    $('.fadeUpTrigger').each(function() {
+      // 縦位置を取得し-50pxして、変数targetに代入する
+      let target = $(this).offset().top -= 50;
+      // スクロール量を取得し、変数scrollに代入する
+      let scroll = $(window).scrollTop();
+      // 表示画面の高さを取得し、変数windowHeightに代入する
+      let windowHeight = $(window).height();
+
+      // 要素の縦位置から表示画面の高さ+200pxを引いた数字よりscrollのほうが大きい場合
+      if(scroll > target - windowHeight + 200) {
+        // .fadeUpを追加する
+        $(this).addClass('fadeUp');
+      } else {
+        // そうでない場合は.fadeUpを削除する
+        $(this).removeClass('fadeUp');
+      }
+    });
+  };    
+});
+</script>
+
+<!-- ハンバーガー -->
+<script>
+var open = false;
+
+function Drop(n) {
+  var i;
+  if (open == false) {
+    for (i = n; i < 5; i++) {
+      Drp(i)
+    }
+    open = true
+  } else if (open == true) {
+    for (i = n; i < 5; i++) {
+      Cls(i)
+    }
+    open = false
+  }
+}
+
+function Drp(n) {
+  var elem = document.getElementsByClassName("menu-con")[n];
+  var pos = -1 * window.innerHeight - n * 100;
+  var id = setInterval(frame, 5);
+
+  function frame() {
+    if (pos >= -10) {
+      clearInterval(id);
+      elem.style.top = 0 + 'px';
+    } else {
+      pos += 10;
+      elem.style.top = pos + 'px';
+    }
+  }
+}
+
+function Cls(n) {
+  var elems = document.getElementsByClassName("menu-con")[n];
+  var poss = 0;
+  var ids = setInterval(frames, 5);
+
+  function frames() {
+    if (poss <= -1 * window.innerHeight) {
+      clearInterval(ids);
+      elems.style.top = -1 * window.innerHeight + 'px';
+    } else {
+      poss += -7 - n * 2;
+      elems.style.top = poss + 'px';
+    }
+  }
+}
+
+
+</script>
+</head>
+
+<body>
+
+        <div class="top_mein_img">
+
+            <div class="menu-icon" onclick="this.classList.toggle('hover');Drop(0)">
+                <div class="menu-bar menu-bar1"></div>
+                <div class="menu-bar menu-bar2"></div>
+                <div class="menu-bar menu-bar3"></div>
+              </div>
+              <div class="menu">
+                <div class="menu-con" style="background:rgb(160,160,170);"><a href="index.html"><p>HOME</p></a></div>  
+               <div class="menu-con" style="background:rgb(213, 118, 118);"><a href="webdesign/index.html"> <p>WEB　DESING</p></a></div>
+                <div class="menu-con" style="background:rgb(73, 83, 78);"><a href="graphicdesing01/index.html"><p>GRAPHIC　DESING#01</p></a></div> 
+                <div class="menu-con" style="background:rgb(153, 220, 220);"><a href="graphicdesing02/index.html"><p>GRAPHIC　DESING#02</p></a></div> 
+                <!-- <div class="menu-con" style="background:rgb(70,70,70);"><p>CONTACT</p></div> -->
+              </div>
+           
+            <div class="top_text">
+              
+                <h2 class="flowing">IT IS A PORTFORIO SITE.</h2>
+                <p class="flowing">TOMOMI MOTOYOSHI</p>
+            
+            </div>
+            <div class="fadeUpTrigger itemBox">
+            <div class="top_profile">
+                <div class="top_name">
+                    <!-- <p>本吉　智美</p> -->
+                </div>
+                
+                
+                <div class="top_profile_01">
+                <p>名 前</p>
+                <p>M a i l</p>
+                <p>出 身</p>
+                <p>生年月日</p>
+                <p>血液型</p>
+                <p>趣 味</p>
+                </div>
+                <div class="top_profile_02">
+                <p>本吉　智美</p>
+                <p>taratara6639963@gmail.com</p>
+                <p>埼玉県さいたま市出身</p>
+                <p>1993/09/14</p>
+                <p>B型</p>
+                <p>旅　ヨガ　トレーニング　猫　キャンプ</p>
+                </div>
+            </div>
+            </div>
+
+            
+        </div>
+
+        <article class="main_wrap">
+            <section class="top">
+
+                <div class="fadeUpTrigger itemBox">
+                <div class="career">               
+                    <div class="career_text">
+                        <div class="text_01">
+                        <p>2012年4月　和洋女子大学　家政学群服飾造形学類　入学</p>
+                        <p>2015年2月　株式会社アーバンリサーチ　アルバイト入社</p>
+                        <p>2016年3月　和洋女子大学　家政学群服飾造形学類　卒業</p>
+                        <p>2016年4月　株式会社アーバンリサーチ　正社員入社</p>
+                        <p>2019年6月　株式会社アーバンリサーチ　退職</p>
+                        <p>2020年5月　HARUYAMA株式会社　入社</p>
+                        <p>2022年8月　HARUYAMA株式会社　退職</p>
+                        </div>
+                        
+                        <div class="Career_cat">
+                            <img src="img/cat.png">
+                        </div>  
+                    </div>                  
+                </div>
+                </div>
+
+            </section>
+
+            <section class="middle">
+                <div class="fadeUpTrigger itemBox">
+                <div class="career_middle">
+                    <p>大学4年間でファッションのデザインや縫製の技能を習得しました。<br>大学卒業後、株式会社アーバンリサーチに入社し、3年間、販売、VMDなどに携わりました。<br>退職後、HARUYAMA株式会社に入社し、不動産会社の事務員として約2年間、<br>書類データや給与管理、会社の販売図面を制作し、ネットに掲載するなど<br>Web関連にも携わりそこでWeb業界に興味をもったのがきっかけです。<br>クライアントのニーズに沿ってイメージを汲み取る力が自分の強みだと思っております。</p>
+                </div>
+                </div>
+            </section>
+
+            <section class="bottom">
+                <div class="fadeUpTrigger itemBox">
+                <div class="skill">
+                    <div class="skill_title">
+                        <h2>SKILL</h2>
+                    </div>
+                    <div class="skill_ai">
+                        <div class="ai_wrap_01">
+                            <img src="img/ai.png" width="62" height="60" alt="イラストレーターロゴ">
+                        </div>
+                        <div class="ai_wrap_02">
+                            <img src="img/ai01.png" width="200" height="35" alt="指標">
+                        </div>
+                    </div>
+                    <div class="skill_ps">
+                        <div class="ps_wrap_01">
+                        <img src="img/ps.png" width="62" height="60" alt="フォトショップロゴ">
+                        </div>
+                        <div class="ps_wrap_02">
+                            <img src="img/ps01.png" width="200" height="35" alt="指標">
+                        </div>
+                    </div>
+                    <div class="skill_js">
+                        <dib class="js_wrap_01">
+                            <img src="img/js.png" width="62" height="60" alt="ジャバスクリプトロゴ">
+                        </dib>
+                        <div class="js_wrap_02">
+                            <img src="img/js01.png" width="200" height="35" alt="指標">
+                        </div>
+                    </div>
+                
+                </div>
+                </div>
+            </section>
+        </article>
+
+        <div class="footer">
+          
+        </div>
+
+
+
+
+
+
+ 
+
+    
+
+</body>
+
+</html>
