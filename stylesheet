@@ -1,0 +1,678 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+.fadeUp {
+    -webkit-animation-name: fadeUpAnime;
+            animation-name: fadeUpAnime; /*アニメーションの名前*/
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s; /*アニメーションの実行時間*/
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards; /*アニメーション後、要素が表示されたままにする*/
+  }
+  @-webkit-keyframes fadeUpAnime {
+    0% {
+      opacity: 0; /*非表示*/
+      -webkit-transform: translateY(100px);
+              transform: translateY(100px); /*縦方向に100pxずらす*/
+    }
+    100% {
+      opacity: 1; /*表示*/
+      -webkit-transform: translateY(0);
+              transform: translateY(0); /*元の位置*/
+    }
+  }
+  @keyframes fadeUpAnime {
+    0% {
+      opacity: 0; /*非表示*/
+      -webkit-transform: translateY(100px);
+              transform: translateY(100px); /*縦方向に100pxずらす*/
+    }
+    100% {
+      opacity: 1; /*表示*/
+      -webkit-transform: translateY(0);
+              transform: translateY(0); /*元の位置*/
+    }
+  }
+  .fadeUpTrigger {
+    opacity: 0; /*非表示*/
+  }
+
+
+
+
+
+
+
+
+
+
+
+/* ハンバーガー */
+
+  * {box-sizing: border-box;max-width: 100%;font-family: 'Gruppo', cursive;}
+html,body {height: 100%;margin: 0;padding: 0;background:rgb(240,240,240)}
+
+.menu-icon {width: 50px;height: 50px;position: fixed;top: 0;right: 0;margin: 10px 15px;transform:scale(0.8);padding: 0;cursor: pointer;z-index:20}
+.menu-bar {width: 50px;height: 5px;background: rgb(190,190,190);position: absolute;transition: all 0.3s;}
+.menu-bar1 {margin-top: 9px}
+.menu-bar2 {margin-top: 23px}
+.menu-bar3 {margin-top: 37px}
+.menu-icon.hover .menu-bar1 {transform: rotate(45deg) scaleX(0.7);margin-top: 22px;}
+.menu-icon.hover .menu-bar2 {opacity: 0}
+.menu-icon.hover .menu-bar3 {transform: rotate(-45deg) scaleX(0.7);margin-top: 22px;}
+
+.menu-con a{
+  /* border: 1px solid gold; */
+  padding-top: 100%;
+}
+.menu {width: 100%;height: 100%;display: -webkit-flex;display: flex;-webkit-flex-wrap: wrap;flex-wrap: wrap;}
+.menu-con  {-webkit-flex-grow: 1;flex-basis: 0;flex-grow: 1;display: -webkit-flex;display: flex;justify-content:space-around;position:relative;top:-100%;transition:all 0.5s}
+.menu-con p:before {content: ""; display: block;position:absolute;top:0;left:0;z-index:1;width:100%;height: 100%;opacity: 1;background: rgba(0,0,0,0);-webkit-transition: all 0.5s;transition: all 0.5s;}
+.menu-con:hover p:before {background: rgba(0,0,0,0.2)}
+.menu-con p {height:20px;align-self:center;color:white;font-size:25px;z-index:2;cursor:pointer}
+@media screen and (max-width: 600px) {.menu-con {min-width:50%}}
+@media screen and (max-width: 350px) {.menu-con {min-width:100%}}
+
+
+
+
+
+html{
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    /* background-color: rgb(245, 250, 252); */
+}
+a:link{text-decoration: none;color:#333;}
+a:visited {text-decoration: none;color:#333;}
+a:hover{text-decoration: underline;color: #000;}
+a:active {text-decoration: underline;color: #000;}
+
+
+
+
+
+/* タイトルアニメーション */
+
+.flowing {
+  margin: 0;
+  font-size: 50px;
+  font-weight: bold;
+  color: #ff6347;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: flowing-anim 3s;
+}
+
+@keyframes flowing-anim {
+ 0%{
+     width: 0%;
+   }
+100%{
+     width: 100%;
+   }
+}
+
+
+
+
+
+
+
+
+
+.top_mein_img{
+    /* border: 5px solid olivedrab; */
+ background-image: url(../img/img01.png);
+ background-size: cover;
+ background-position: center center;
+ background-repeat: no-repeat;
+ width: 100%;
+ height: 750px;
+ margin: auto;
+
+}
+
+.top_text{
+    /* border: 1px solid indigo; */
+    margin-top: -600px;
+}
+
+.top_text h2{
+    text-align: center;
+    font-size: 34px;
+    color: rgb(86, 86, 155);
+    margin-bottom: 2%;
+    font-family: 'Yomogi', cursive;
+}
+.top_text p{
+    text-align: center;
+    font-size: 34px;
+    color: rgb(86, 86, 155);
+    font-family: 'Yomogi', cursive;
+}
+.top_name p{
+    /* text-align: center; */
+    color: rgb(86, 86, 155);
+    font-size: 24px;
+    font-family: 'Zen Kurenaido', sans-serif;
+    font-family: 'Yomogi', cursive;
+    -ms-writing-mode: tb-rl;
+    writing-mode: vertical-rl;
+ 
+
+}
+
+
+.top_profile{
+    /* border: 1px solid green; */
+    display: flex;
+    justify-content: center;
+    padding-top: 5%;
+
+    
+    
+}
+/* 
+.top_profile_01{
+    border: 5px solid goldenrod;
+
+}
+.top_profile_02{
+    border: 5px solid green;
+    position: fixed;
+} */
+
+.top_profile_01 p{
+    /* border: 1px solid forestgreen; */
+    /* text-align: center; */
+    color: rgb(86, 86, 155);
+    /* font-weight: bolder; */
+    font-size: 21px;
+    font-family: 'Zen Kurenaido', sans-serif;
+    font-family: 'Zen Maru Gothic', sans-serif;
+    margin-right: 10px;
+    line-height: 40px;
+}
+.top_profile_02 p{
+    /* text-align: center; */
+    color: rgb(86, 86, 155);
+    font-size: 21px;
+    font-family: 'Zen Kurenaido', sans-serif;
+    font-family: 'Zen Maru Gothic', sans-serif;
+    margin-left: 50px;
+    line-height: 42px;
+}
+
+
+.career_text{
+    /* border: 5px solid gold; */
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    padding: 10% 10% 5% 10%;
+
+   
+
+}
+ 
+.Career_cat{
+
+
+animation: fluffy1 2s ease infinite; }
+
+@keyframes fluffy1 {
+    0% {
+      transform: translateY(0); }
+    5% {
+      transform: translateY(0); }
+    10% {
+      transform: translateY(0); }
+    20% {
+      transform: translateY(-10px); }
+    25% {
+      transform: translateY(0); }
+    30% {
+      transform: translateY(-10px); }
+    50% {
+      transform: translateY(0); }
+    100% {
+      transform: translateY(0); } }
+
+
+
+
+
+.text_01 {
+    /* border: 1px solid rgb(10, 17, 146); */
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+    width: 25em;
+    white-space: nowrap;
+    font-size:1.3em;
+
+}
+.text_01 p{
+    /* font-size: 1em; */
+    color: rgb(86, 86, 155);
+    line-height: 40px;
+    font-family: 'Zen Kurenaido', sans-serif;
+    font-family: 'Zen Maru Gothic', sans-serif;
+
+}
+.Career_cat{
+    /* border: 1px solid forestgreen; */
+    padding-top: 5%;
+   
+}
+.middle{
+    /* border: 1px solid firebrick; */
+    width: 100%;
+    margin: auto;
+    
+}
+
+.middle .career_middle p{
+    /* border: 5px solid gold; */
+    color: rgb(86, 86, 155);
+    font-size: 1.3em;
+    line-height: 40px;
+    font-family: 'Zen Kurenaido', sans-serif;
+    font-family: 'Zen Maru Gothic', sans-serif;
+    white-space: nowrap;
+    margin: 0 auto;
+    padding: 10% 0 10% 10%;
+
+    
+}
+.skill{
+    padding-bottom: 10%;
+}
+.skill_title h2{
+    text-align: center;
+    font-size: 2em;
+    line-height: 40px;
+    color: rgb(86, 86, 155);
+    font-family: 'Zen Kurenaido', sans-serif;
+    font-family: 'Zen Maru Gothic', sans-serif;
+}
+.skill_ai,
+.skill_ps,
+.skill_js{
+    /* border: 1px solid firebrick; */
+    display: flex;
+    justify-content: center;
+    padding-top: 25px;
+    
+}
+.ai_wrap_01,
+.ps_wrap_01,
+.js_wrap_01{
+    padding-right: 20px;
+
+}
+.ai_wrap_02,
+.ps_wrap_02,
+.js_wrap_02{
+padding-top:  1%;
+
+}
+
+.footer{
+    background-image: url(../img/img02.png);
+    background-repeat: no-repeat;
+   
+}
+.footer{
+ background-size: cover;
+ background-position: center center;
+ width: 100%;
+ height: 650px;
+ margin: auto;
+}
+
+
+
+
+/* webdesingページ---------------------------------------------- */
+
+.webdesign_ttl{
+  /* border: 1px solid firebrick; */
+  margin-top: -600px;
+  line-height: 550%;
+}
+.webdesign_ttl h2{
+  /* border: 1px solid gold; */
+  text-align: center;
+  font-size: 34px;
+  color: rgb(86, 86, 155);
+  /* font-family: 'Zen Kurenaido', sans-serif; */
+  font-family: 'Yomogi', cursive;
+}
+.webdesign_ttl p{
+  text-align: center;
+  font-size: 28px;
+  color: rgb(86, 86, 155);
+  /* font-family: 'Zen Kurenaido', sans-serif; */
+  font-family: 'Zen Maru Gothic', sans-serif;
+
+}
+
+.wedesing{
+  margin: auto;
+  padding: 0%;
+  background-color: #ff6347;
+  background-image: radial-gradient(#ffc107 2px, #ffffff 2px);
+}
+
+
+
+.webdesign_01_wrap{
+  /* border: 10px solid fuchsia; */
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 15%;
+  margin-top: 35%;
+}
+
+.webdesign_01_img p{
+  /* border: 1px solid darkgoldenrod; */
+  font-size: 28px;
+  /* color: rgb(86, 86, 155); */
+  font-family: 'Zen Kurenaido', sans-serif;
+  font-family: 'Zen Maru Gothic', sans-serif;
+
+}
+
+.webdesign_01_text{
+  padding-top: 10%;
+}
+.webdesign_01_text p{
+  /* border: 1px solid greenyellow; */
+  font-size: 14px;
+  font-family: 'Zen Maru Gothic', sans-serif;
+
+}
+.webdesign_01_text_01{
+  /* border: 5px solid darkorange; */
+  margin-top: 10%;
+  line-height: 2em;
+}
+.webdesign_01_text_02{
+  /* border: 5px solid gold; */
+  margin-top: 10%;
+}
+
+
+
+
+
+.webdesign_02_wrap{
+  /* border: 10px solid gold; */
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 15%;
+}
+.webdesign_02_img p{
+  font-size: 28px;
+  /* color: rgb(86, 86, 155); */
+  font-family: 'Zen Kurenaido', sans-serif;
+  font-family: 'Zen Maru Gothic', sans-serif;
+
+}
+.webdesign_02_text{
+  padding-top: 10%;
+}
+.webdesign_02_text p{
+  font-size: 14px;
+  font-family: 'Zen Maru Gothic', sans-serif;
+}
+.webdesign_02_text_01{
+  margin-top: 10%;
+  line-height: 2em;
+}
+.webdesign_02_text_02{
+  margin-top: 10%;
+}
+
+
+
+
+
+
+.webdesign_03_wrap{
+  /* border: 10px solid gold; */
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 15%;
+}
+.webdesign_03_img p{
+  font-size: 28px;
+  /* color: rgb(86, 86, 155); */
+  font-family: 'Zen Kurenaido', sans-serif;
+  font-family: 'Zen Maru Gothic', sans-serif;
+
+}
+.webdesign_03_text{
+  padding-top: 10%;
+}
+.webdesign_03_text p{
+  font-size: 14px;
+  font-family: 'Zen Maru Gothic', sans-serif;
+}
+.webdesign_03_text_01{
+  margin-top: 10%;
+  line-height: 2em;
+}
+.webdesign_03_text_02{
+  margin-top: 10%;
+}
+
+
+
+
+
+
+
+.webdesign_04_wrap{
+  /* border: 10px solid gold; */
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 15%;
+}
+.webdesign_04_img p{
+  font-size: 28px;
+  /* color: rgb(86, 86, 155); */
+  font-family: 'Zen Maru Gothic', sans-serif;
+
+}
+.webdesign_04_text{
+  padding-top: 10%;
+}
+.webdesign_04_text p{
+  font-size: 14px;
+  font-family: 'Zen Maru Gothic', sans-serif;
+}
+.webdesign_04_text_01{
+  margin-top: 10%;
+  line-height: 2em;
+}
+.webdesign_04_text_02{
+  margin-top: 10%;
+}
+.webdesign_04_img .url{
+  font-size: 16px;
+  
+}
+
+
+
+
+.webdesign_05_wrap{
+  /* border: 10px solid gold; */
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 15%;
+}
+.webdesign_05_img p{
+  font-size: 28px;
+  /* color: rgb(86, 86, 155); */
+  font-family: 'Zen Kurenaido', sans-serif;
+  font-family: 'Zen Maru Gothic', sans-serif;
+
+}
+.webdesign_05_text{
+  padding-top: 10%;
+}
+.webdesign_05_text p{
+  font-size: 14px;
+  font-family: 'Zen Maru Gothic', sans-serif;
+}
+.webdesign_05_text_01{
+  margin-top: 10%;
+  line-height: 2em;
+}
+.webdesign_05_text_02{
+  margin-top: 10%;
+}
+.webdesign_05_img .url{
+  font-size: 16px;
+  font-family: 'Zen Maru Gothic', sans-serif;
+  
+}
+a{
+  font-family: 'Zen Maru Gothic', sans-serif;
+}
+
+
+
+/* graphicdesing01ページ---------------------------------------------- */
+
+
+.graphicdesing_ttl{
+  /* border: 1px solid firebrick; */
+  margin-top: -600px;
+  line-height: 550%;
+}
+
+.graphicdesing_ttl h2{
+  /* border: 1px solid gold; */
+  text-align: center;
+  font-size: 34px;
+  color: rgb(86, 86, 155);
+  /* font-family: 'Zen Kurenaido', sans-serif; */
+  font-family: 'Yomogi', cursive;
+  
+}
+.graphicdesing_ttl p{
+  text-align: center;
+  font-size: 28px;
+  color: rgb(86, 86, 155);
+  font-family: 'Zen Maru Gothic', sans-serif;
+  /* font-family: 'Zen Kurenaido', sans-serif; */
+}
+
+
+.graphicdesing_01_wrap{
+  margin-top: 40%;
+  width: 100%;
+ text-align: center; 
+}
+.graphicdesing_02_wrap{
+  width: 100%;
+  text-align: center; 
+
+}
+.graphicdesing_03_wrap{
+  text-align: right;
+  margin-top: 30%;
+}
+.graphicdesing_text{
+  /* border: 1px solid forestgreen; */
+  padding: 100px 0 0 300px;
+
+}
+
+.graphicdesing_text p{
+  /* border: 1px solid fuchsia; */
+  width: 100%;
+  margin: 0;
+font-family: 'Zen Maru Gothic', sans-serif;
+font-size: 16px;
+line-height: 30px;
+}
+
+.graphicdesing_03_wrap{
+  margin-top: -50px;
+}
+
+
+/* graphicdesing02ページ---------------------------------------------- */
+
+
+.graphicdesing_ttl_no02{
+margin-top: -600px;
+line-height: 550%;
+}
+
+
+.graphicdesing_ttl_no02 h2{
+  text-align: center;
+  font-size: 34px;
+  color: rgb(86, 86, 155);
+  /* font-family: 'Zen Kurenaido', sans-serif; */
+  font-family: 'Yomogi', cursive;
+  
+
+}
+
+.graphicdesing_ttl_no02 p{
+  text-align: center;
+  font-size: 28px;
+  color: rgb(86, 86, 155);
+  font-family: 'Zen Maru Gothic', sans-serif;
+  /* font-family: 'Zen Kurenaido', sans-serif; */
+
+}
+
+
+.graphicdesing_no02_card{
+  display: flex;
+  justify-content: space-evenly;
+}
+.graphicdesing_no02_wrap01{
+  margin-top: 50%;
+  text-align: center;
+}
+
+.graphicdesing_no02_wrap02{
+  margin-top: 40%;
+  text-align: center;
+}
+
+.graphicdesing_no02_wrap03{
+  margin-top: 100px;
+  text-align: center;
+}
+
+.graphicdesing_no02_wrap04{
+  margin-top: 100px;
+  text-align: center;
+  margin-bottom: 10%;
+}
+
+
+
+.graphicdesing_text_no02{
+  margin:5% 0 10% 0;
+
+}
+
+.graphicdesing_text_no02 p{
+  font-size: 16px;
+  font-family: 'Zen Maru Gothic', sans-serif;
+
+
+}
